@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" width="2200" height="1120" font-family="Microsoft YaHei, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+  <!-- title -->
+  <text x="550" y="34" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2937">贴纸数据生产流水线(FFHQ → 动漫贴纸 → ModelScope)</text>
+
+  <!-- ===== 生成链(上行) ===== -->
+  <!-- FFHQ input -->
+  <rect x="40" y="90" width="130" height="70" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="105" y="120" text-anchor="middle" font-size="15" fill="#3730a3">FFHQ 人脸</text>
+  <text x="105" y="142" text-anchor="middle" font-size="12" fill="#6366f1">00000~69999.png</text>
+
+  <!-- Stage A: BiRefNet 抠图 -->
+  <rect x="230" y="90" width="170" height="70" rx="10" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="315" y="118" text-anchor="middle" font-size="15" font-weight="bold" fill="#065f46">① 原图分割</text>
+  <text x="315" y="140" text-anchor="middle" font-size="12" fill="#10b981">BiRefNet 抠图</text>
+
+  <!-- Stage B: FLUX 动漫化 -->
+  <rect x="470" y="90" width="170" height="70" rx="10" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="555" y="118" text-anchor="middle" font-size="15" font-weight="bold" fill="#5b21b6">② 插画生成</text>
+  <text x="555" y="140" text-anchor="middle" font-size="12" fill="#8b5cf6">FLUX.2 Klein 动漫化</text>
+
+  <!-- Stage C: BiRefNet 抠图 -->
+  <rect x="710" y="90" width="170" height="70" rx="10" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+  <text x="795" y="118" text-anchor="middle" font-size="15" font-weight="bold" fill="#065f46">③ 二次分割</text>
+  <text x="795" y="140" text-anchor="middle" font-size="12" fill="#10b981">BiRefNet 抠图</text>
+
+  <!-- arrows: FFHQ -> A -> B -> C -->
+  <line x1="170" y1="125" x2="222" y2="125" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="400" y1="125" x2="462" y2="125" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="640" y1="125" x2="702" y2="125" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ===== 本地产物(中行) ===== -->
+  <text x="315" y="210" text-anchor="middle" font-size="13" fill="#065f46">A 原图抠图</text>
+  <text x="315" y="228" text-anchor="middle" font-size="11" fill="#6b7280">本地 cutout/XXXXX.png</text>
+  <line x1="315" y1="160" x2="315" y2="196" stroke="#10b981" stroke-width="2" marker-end="url(#arr)"/>
+
+  <text x="555" y="210" text-anchor="middle" font-size="13" fill="#5b21b6">B 动漫图</text>
+  <text x="555" y="228" text-anchor="middle" font-size="11" fill="#6b7280">本地 B/XXXXX.png(不上传)</text>
+  <line x1="555" y1="160" x2="555" y2="196" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arr)"/>
+
+  <text x="795" y="210" text-anchor="middle" font-size="13" fill="#065f46">C 动漫抠图</text>
+  <text x="795" y="228" text-anchor="middle" font-size="11" fill="#6b7280">本地 C/XXXXX.png</text>
+  <line x1="795" y1="160" x2="795" y2="196" stroke="#10b981" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ===== 上传(下行) ===== -->
+  <rect x="230" y="260" width="170" height="60" rx="8" fill="#dbeafe" stroke="#3f789e" stroke-width="2"/>
+  <text x="315" y="285" text-anchor="middle" font-size="14" fill="#1e40af">→ origin/PartNN/</text>
+  <text x="315" y="305" text-anchor="middle" font-size="11" fill="#3f789e">XXXXX.png</text>
+  <line x1="315" y1="236" x2="315" y2="256" stroke="#3f789e" stroke-width="2" marker-end="url(#arr)"/>
+
+  <rect x="470" y="260" width="170" height="60" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="555" y="295" text-anchor="middle" font-size="13" fill="#6b7280">不上传(中间产物)</text>
+  <line x1="555" y1="236" x2="555" y2="256" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr)"/>
+
+  <rect x="710" y="260" width="170" height="60" rx="8" fill="#dbeafe" stroke="#3f789e" stroke-width="2"/>
+  <text x="795" y="285" text-anchor="middle" font-size="14" fill="#1e40af">→ illustration/PartNN/</text>
+  <text x="795" y="305" text-anchor="middle" font-size="11" fill="#3f789e">XXXXX.png</text>
+  <line x1="795" y1="236" x2="795" y2="256" stroke="#3f789e" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ===== ModelScope 数据集 ===== -->
+  <rect x="180" y="380" width="740" height="120" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="550" y="410" text-anchor="middle" font-size="17" font-weight="bold" fill="#9a3412">ModelScope 数据集(.ai 端点)</text>
+  <text x="550" y="436" text-anchor="middle" font-size="13" fill="#c2410c">ICEMAGE/StickerProject   ·   GoatGroup/StickerProject</text>
+  <text x="550" y="460" text-anchor="middle" font-size="12" fill="#9a3412">origin/Part20/20000.png · origin/Part20/20001.png · ... · illustration/Part40/40000.png</text>
+  <text x="550" y="482" text-anchor="middle" font-size="12" fill="#9a3412">每 1000 张一个 Part(PartNN = idx÷1000),编号随原始输入</text>
+  <!-- arrows from origin/illustration to ModelScope -->
+  <line x1="315" y1="320" x2="315" y2="372" stroke="#ea580c" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="795" y1="320" x2="795" y2="372" stroke="#ea580c" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- legend / notes -->
+  <text x="40" y="538" font-size="12" fill="#6b7280">绿=BiRefNet 抠图 · 紫=FLUX.2 Klein 动漫化 · 蓝=上传到 ModelScope · 橙=数据集仓库</text>
+</svg>

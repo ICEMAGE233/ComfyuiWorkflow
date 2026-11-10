@@ -1,0 +1,197 @@
+{
+  "id": "99b30da3-e11b-4107-bf06-9630047afaa8",
+  "revision": 0,
+  "last_node_id": 8,
+  "last_link_id": 13,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "LoadImageDataSetFromFolder",
+      "pos": [
+        1247.7710090445685,
+        -884.0636640615597
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "images",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.2",
+        "Node name for S&R": "LoadImageDataSetFromFolder"
+      },
+      "widgets_values": [
+        "3d"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ImageScaleBy",
+      "pos": [
+        1404.635743580727,
+        -690.2145612201268
+      ],
+      "size": [
+        270,
+        89.9375
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.2",
+        "Node name for S&R": "ImageScaleBy",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "nearest-exact",
+        0.35
+      ]
+    },
+    {
+      "id": 1,
+      "type": "PixelArtDetectorSave",
+      "pos": [
+        1723.2944206831733,
+        -737.9611335214399
+      ],
+      "size": [
+        318.4765625,
+        486
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 6
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PixelArtDetectorSave"
+      },
+      "widgets_values": [
+        "%date%_test_origin_0.35/PixelArt_inflate",
+        false,
+        64,
+        "lossy",
+        80,
+        false,
+        true,
+        2048,
+        2048,
+        "contain"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "LoadImage",
+      "pos": [
+        1072.5636509674168,
+        -696.6527977359391
+      ],
+      "size": [
+        270,
+        314
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.2",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "image_00048_.png",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      6,
+      5,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      4,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1782344933569826,
+      "offset": [
+        -718.1340260297337,
+        959.8908429103924
+      ]
+    },
+    "frontendVersion": "1.47.12",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

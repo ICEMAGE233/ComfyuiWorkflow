@@ -1,0 +1,23 @@
+Use the reference image as a visual reference.
+Transform the **subject, object, character, animal, vehicle, building, product, or scene** into **true low-resolution pixel art**, while preserving its recognizable shape, color, composition, and key visual features.
+Render it as if it were originally created on a **small 64×64, 96×96, or 128×128 pixel canvas**, then enlarged to a high-resolution image using **nearest-neighbor scaling**.
+The final image can be large and high-resolution, but the **apparent pixel size must remain large, obvious, and consistent**.
+Use:
+* large crisp square pixel blocks
+* strong pixel clustering
+* hard stair-stepped edges
+* blocky curves and silhouettes
+* deliberately low spatial detail
+* limited color palette
+* solid color regions
+* pixel-by-pixel highlights and shadows
+* sharp non-antialiased boundaries
+* simplified forms that still preserve the reference
+* consistent coarse pixel size across the entire image
+Every visual element should be constructed from the **same clearly visible square pixel blocks**.
+Do not simply apply a pixelation filter to a detailed image. The subject must look **natively designed as pixel art**, with shapes, shading, contours, and details intentionally built from pixel clusters.
+For a stronger pixel effect, make the artwork appear to be **native 64×64 pixel art enlarged 16× with nearest-neighbor scaling**.
+Preserve the overall composition and identity of the reference, but simplify small details where necessary so they read clearly at low pixel resolution.
+Preserve the original color temperature of the reference — do not shift hues toward blue, green, or any other tint.
+Avoid: smooth illustration, anti-aliasing, vector curves, soft edges, smooth gradients, photorealistic textures, tiny pixels, high-frequency detail, mosaic filter, blurry pixelation, JPEG artifacts, halftone printing, painterly rendering, grid lines, black grid, dark seams between pixel blocks, cell borders, lines between adjacent pixels, blue tint, green tint, color cast, hue shift, or merely overlaying a pixel texture on a high-resolution image.
+**Main priority**: Even when the final output resolution is high, the obvious large-block pixel art style must be maintained, with pixel blocks remaining clearly visible, colors matching the reference's temperature, and no grid lines between blocks.
